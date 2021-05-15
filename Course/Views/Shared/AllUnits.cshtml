@@ -1,0 +1,14 @@
+﻿@model Unit
+
+<div class="row">
+    <div class="col">
+        <h3>@Model.Name</h3>
+        <p>@Model.shortDesk</p>
+        <p>Стоимость: @Model.price.ToString()</p>
+
+        <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+    </div>
+    <div class="col">
+        <img class="img-thumbnail" src="@Model.img" alt="@Model.Name" width="400" height="400" />
+    </div>
+</div>

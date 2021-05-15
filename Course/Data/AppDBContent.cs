@@ -14,5 +14,6 @@ namespace Course.Data
         }
         public DbSet<Unit> Unit { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<RosterItem> RosterItem { get; set; }
     }
 }

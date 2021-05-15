@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Course.Data.Repository;
+using Microsoft.AspNetCore.Http;
+using Course.Data.Models;
 
 namespace Course
 {
@@ -30,10 +32,15 @@ namespace Course
             services.AddTransient<IAllUnits, UnitRepository>();
             services.AddTransient<IUnitsCategory, CategoryRepository>();
 
+            services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
+            services.AddScoped(sp => Roster.GetRoster(sp));
+
             services.AddMvc(MvcOtions =>
             {
                 MvcOtions.EnableEndpointRouting = false;
             });
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +49,7 @@ namespace Course
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
             using (var scope = app.ApplicationServices.CreateScope())
