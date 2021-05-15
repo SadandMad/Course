@@ -21,7 +21,7 @@
                             <a class="nav-link" aria-current="page" asp-controller="Home" asp-action="Index">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Units" asp-action="List">Все Юниты</a>
+                            <a class="nav-link" asp-controller="Units" asp-action="List" asp-route-category="">Все Юниты</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">Фильтры</a>
@@ -49,8 +49,8 @@
         @RenderBody()
     </div>
     <footer class="container">
-        <p class="float-end"><a asp-controller="Home" asp-action="Index">Back to top</a></p>
-        <p>© 2021 Крот Евгений, курсовой · <a href="https://vk.com/id198587228">Author</a></p>
+        <p class="float-end"><a class="link-dark text-decoration-none" href="">Back to top</a></p>
+        <p>© 2021 Крот Евгений, курсовой · <a class="link-dark text-decoration-none" href="https://vk.com/id198587228">Author</a></p>
     </footer>
     <script src="~/js/bootstrap.min.js"></script>   
 </body>

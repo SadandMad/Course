@@ -23,7 +23,7 @@ namespace Course.Data.Models
             string rosterId = session.GetString("rosterId") ?? Guid.NewGuid().ToString();
             session.SetString("rosterId", rosterId);
             return new Roster(context) { rosterId = rosterId };
-        }
+        }   
 
         public void AddToRoster(Unit unit) {
             this.appDBContent.RosterItem.Add(new RosterItem {

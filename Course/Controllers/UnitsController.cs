@@ -32,7 +32,13 @@ namespace Course.Controllers
             }
             else
             {
-                if (string.Equals("HQ", category, StringComparison.OrdinalIgnoreCase))
+                foreach (Category cat in _allCategories.getAllCategories.OrderBy(i => i.Id)) {
+                    if (string.Equals(cat.Name, category, StringComparison.OrdinalIgnoreCase))
+                    {
+                        units = _allUnits.getUnits.Where(i => i.Category.Name.Equals(cat.Name)).OrderBy(i => i.Id);
+                    }
+                }
+                /*if (string.Equals("HQ", category, StringComparison.OrdinalIgnoreCase))
                 {
                     units = _allUnits.getUnits.Where(i => i.Category.Name.Equals("HQ")).OrderBy(i => i.Id);
                 }
@@ -64,7 +70,7 @@ namespace Course.Controllers
 
                         }
                     }
-                }
+                }*/
             }
             currCategory = _category;
             var unitObj = new UnitsListViewModel
