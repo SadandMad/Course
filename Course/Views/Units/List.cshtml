@@ -1,0 +1,28 @@
+﻿@using Course.ViewModels
+@model UnitsListViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Список Юнитов</title>
+</head>
+<body>
+    <h1>Все юниты:</h1>
+    <h2>@Model.currCategory</h2>
+    @{ 
+        foreach(var unit in Model.allUnits)
+            {
+                <div>
+                    <h3>@unit.Name</h3>
+                    <p>@unit.shortDesk</p>
+                    <p>Стоимость: @unit.price.ToString()</p>
+                </div>
+            }
+    }
+</body>
+</html>

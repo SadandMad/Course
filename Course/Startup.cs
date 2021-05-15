@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Course.Data.Interfaces;
+using Course.Data.mocks;
 
 namespace Course
 {
@@ -17,6 +19,8 @@ namespace Course
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IAllUnits, MockUnits>();
+            services.AddTransient<IUnitsCategory, MockCategory>();
             services.AddMvc(MvcOtions =>
             {
                 MvcOtions.EnableEndpointRouting = false;

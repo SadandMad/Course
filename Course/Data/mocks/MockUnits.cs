@@ -16,7 +16,7 @@ namespace Course.Data.mocks
                     new Unit { Name = "Primaris Captain", shortDesk = "Первый парень на селе",
                         longDesk = "Капитаны Космодесанта – одновременно превосходные воители и одарённые полководцы, командующие в бою ротами Адептус Астартес.",
                         img = "https://www.games-workshop.com/resources/catalog/product/920x950/99120101179_PrimarisCaptain01.jpg", price = 5, isFavourite = true, available = 1, Category = _CategoryUnits.getAllCategories.First() },
-                    new Unit { Name = "Intercessor Squad", shortDesk = "Стиом-стреляем",
+                    new Unit { Name = "Intercessor Squad", shortDesk = "Стоим-стреляем",
                         longDesk = "Заступники — это ядро любой ударной группировки космодесантников-примарис.",
                         img = "https://www.games-workshop.com/resources/catalog/product/920x950/99120101190_PrimarisIntercessors01.jpg", price = 5, isFavourite = true, available = 3, Category = _CategoryUnits.getAllCategories.ElementAt(2) },
                     new Unit { Name = "Hellblaster Squad", shortDesk = "Главное - не кинуть кол",

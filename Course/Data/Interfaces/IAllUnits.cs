@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Course.Data.Interfaces
 {
-    interface IAllUnits {
+    public interface IAllUnits {
         IEnumerable<Unit> getUnits { get; }
         IEnumerable<Unit> getFavouriteUnits { get; set; }
         Unit getUnit(int UnitID);

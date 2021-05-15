@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Course.Data.Interfaces
 {
-    interface IUnitsCategory {
+    public interface IUnitsCategory {
         IEnumerable<Category> getAllCategories { get; }
     }
 }
