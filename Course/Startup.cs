@@ -32,7 +32,7 @@ namespace Course
             services.AddTransient<IAllUnits, UnitRepository>();
             services.AddTransient<IUnitsCategory, CategoryRepository>();
 
-            services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
+            services.AddHttpContextAccessor();
             services.AddScoped(sp => Roster.GetRoster(sp));
 
             services.AddMvc(MvcOtions =>

@@ -25,7 +25,7 @@ namespace Course.Data.Models
             return new Roster(context) { rosterId = rosterId };
         }
 
-        public void AddToRoster(Unit unit, int amount) {
+        public void AddToRoster(Unit unit) {
             this.appDBContent.RosterItem.Add(new RosterItem {
                 rosterId = rosterId, unit = unit
             });
