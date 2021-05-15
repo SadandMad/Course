@@ -17,6 +17,7 @@ namespace Course.Controllers
             _allCategories = allCategories;
         }
         public ViewResult List() {
+            ViewBag.Title = "Список юнитов";
             UnitsListViewModel obj = new UnitsListViewModel();
             obj.allUnits = _allUnits.getUnits;
             obj.currCategory = "Юниты";
