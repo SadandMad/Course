@@ -30,5 +30,14 @@ namespace Course.Controllers
             }
             return RedirectToAction("Index");
         }
+        public RedirectToActionResult deleteFromRoster(int id) {
+            _roster.deleteFromRoster(id);
+            return RedirectToAction("Index");
+        }
+        public RedirectToActionResult clearRoster()
+        {
+            _roster.clearRoster();
+            return RedirectToAction("Index");
+        }
     }
 }

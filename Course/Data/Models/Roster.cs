@@ -33,6 +33,16 @@ namespace Course.Data.Models
             appDBContent.SaveChanges();
         }
 
+        public void deleteFromRoster(int id) {
+            appDBContent.RosterItem.Remove(appDBContent.RosterItem.FirstOrDefault(c => c.rosterId == rosterId && c.Id == id));
+            appDBContent.SaveChanges();
+        }
+
+        public void clearRoster() {
+            appDBContent.RosterItem.RemoveRange(appDBContent.RosterItem.Where(c => c.rosterId == rosterId).Include(s => s.unit));
+            appDBContent.SaveChanges();
+        }
+
         public List<RosterItem> getRosterItems() {
             return appDBContent.RosterItem.Where(c => c.rosterId == rosterId).Include(s => s.unit).ToList();
         }

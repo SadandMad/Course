@@ -1,10 +1,12 @@
 ﻿<div class="container">
-    @foreach (var el in Model.roster.listRosterItems) {
-        <div class="alert alert-warning mt-3">
-            <b>Юнит:</b> @el.unit.Name
-            <b>Стоимость:</b> @el.unit.price.ToString()
-        </div>
+    @foreach (var el in Model.roster.listRosterItems)
+    {
+    <div class="alert alert-warning mt-3">
+        <b>Юнит:</b> @el.unit.Name
+        <b>Стоимость:</b> @el.unit.price.ToString()
+        <p><a class="btn btn-danger" asp-controller="Roster" asp-action="deleteFromRoster" asp-route-id="@el.Id">Удалить</a></p>
+    </div>
     }
     <hr />
-    <div class="btn btn-danger" asp-controller=">Завершить</div>
+    <p><a class="btn btn-danger" asp-controller="Roster" asp-action="clearRoster">Очистить</a></p>
 </div>

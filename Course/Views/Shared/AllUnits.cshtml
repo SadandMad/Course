@@ -7,6 +7,7 @@
         <p>Стоимость: @Model.price.ToString()</p>
 
         <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+        <p><a class="btn btn-warning" asp-controller="Roster" asp-action="addToRoster" asp-route-id="@Model.Id">Добавить в ростер</a></p>
     </div>
     <div class="col">
         <img class="img-thumbnail" src="@Model.img" alt="@Model.Name" width="400" height="400" />

@@ -11,30 +11,30 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">WarScribe</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">WarScribe</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/">Главная</a>
+                            <a class="nav-link" aria-current="page" asp-controller="Home" asp-action="Index">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Units/List">Все Юниты</a>
+                            <a class="nav-link" asp-controller="Units" asp-action="List">Все Юниты</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">Фильтры</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown" data-bs-popper="none">
-                                <li><a class="dropdown-item" href="/Units/List/HQ">HQ</a></li>
-                                <li><a class="dropdown-item" href="/Units/List/Troops">Troops</a></li>
-                                <li><a class="dropdown-item" href="/Units/List/Elites">Elites</a></li>
-                                <li><a class="dropdown-item" href="/Units/List/Fast Attack">Fast Attack</a></li>
-                                <li><a class="dropdown-item" href="/Units/List/Heavy Support">Heavy Support</a></li>
+                                <li><a class="dropdown-item" asp-controller="Units" asp-action="List" asp-route-category="HQ">HQ</a></li>
+                                <li><a class="dropdown-item" asp-controller="Units" asp-action="List" asp-route-category="Troops">Troops</a></li>
+                                <li><a class="dropdown-item" asp-controller="Units" asp-action="List" asp-route-category="Elites">Elites</a></li>
+                                <li><a class="dropdown-item" asp-controller="Units" asp-action="List" asp-route-category="Fast Attack">Fast Attack</a></li>
+                                <li><a class="dropdown-item" asp-controller="Units" asp-action="List" asp-route-category="Heavy Support">Heavy Support</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Roster/">Корзина</a>
+                            <a class="nav-link" asp-controller="Roster" asp-action="Index">Ростер</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -49,7 +49,7 @@
         @RenderBody()
     </div>
     <footer class="container">
-        <p class="float-end"><a href="/">Back to top</a></p>
+        <p class="float-end"><a asp-controller="Home" asp-action="Index">Back to top</a></p>
         <p>© 2021 Крот Евгений, курсовой · <a href="https://vk.com/id198587228">Author</a></p>
     </footer>
     <script src="~/js/bootstrap.min.js"></script>   
