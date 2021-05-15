@@ -11,12 +11,7 @@ namespace Course.Data
 {
     public class dbPreFill
     {
-        public static void Initial(IApplicationBuilder app) {
-            AppDBContent content;
-            using(var scope = app.ApplicationServices.CreateScope()) {
-                content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
-            }
-
+        public static void Initial(AppDBContent content) {
             if (!content.Category.Any())
                 content.Category.AddRange(Categories.Select(c => c.Value));
 
@@ -24,6 +19,8 @@ namespace Course.Data
             {
                 content.AddRange(Units.Select(c => c.Value));
             }
+
+            content.SaveChanges();
         }
 
         private static Dictionary<string, Category> category;

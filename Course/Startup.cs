@@ -44,7 +44,11 @@ namespace Course
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
 
-            dbPreFill.Initial(app);
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                dbPreFill.Initial(content);
+            }
         }
     }
 } 
