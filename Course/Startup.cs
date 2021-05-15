@@ -43,6 +43,8 @@ namespace Course
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+
+            dbPreFill.Initial(app);
         }
     }
 } 
