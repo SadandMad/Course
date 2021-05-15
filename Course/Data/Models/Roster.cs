@@ -44,7 +44,7 @@ namespace Course.Data.Models
         }
 
         public List<RosterItem> getRosterItems() {
-            return appDBContent.RosterItem.Where(c => c.rosterId == rosterId).Include(s => s.unit).ToList();
+            return appDBContent.RosterItem.Where(c => c.rosterId == rosterId).OrderBy(c => c.unit.Category).ThenByDescending(c => c.unit.Id).Include(s => s.unit).ToList();
         }
     }
 }
