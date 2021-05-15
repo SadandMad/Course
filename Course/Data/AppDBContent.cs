@@ -13,6 +13,6 @@ namespace Course.Data
 
         }
         public DbSet<Unit> Unit { get; set; }
-        public DbSet<Category> category { get; set; }
+        public DbSet<Category> Category { get; set; }
     }
 }

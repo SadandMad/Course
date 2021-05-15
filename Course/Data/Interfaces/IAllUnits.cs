@@ -8,7 +8,7 @@ namespace Course.Data.Interfaces
 {
     public interface IAllUnits {
         IEnumerable<Unit> getUnits { get; }
-        IEnumerable<Unit> getFavouriteUnits { get; set; }
+        IEnumerable<Unit> getFavouriteUnits { get; }
         Unit getUnit(int UnitID);
     }
 }

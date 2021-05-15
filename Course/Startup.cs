@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Course.Data.Repository;
 
 namespace Course
 {
@@ -24,8 +25,11 @@ namespace Course
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IAllUnits, MockUnits>();
-            services.AddTransient<IUnitsCategory, MockCategory>();
+            //services.AddTransient<IAllUnits, MockUnits>();
+            //services.AddTransient<IUnitsCategory, MockCategory>();
+            services.AddTransient<IAllUnits, UnitRepository>();
+            services.AddTransient<IUnitsCategory, CategoryRepository>();
+
             services.AddMvc(MvcOtions =>
             {
                 MvcOtions.EnableEndpointRouting = false;
