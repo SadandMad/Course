@@ -67,7 +67,6 @@ namespace Course.Controllers
                                     units = _allUnits.getUnits.Where(i => i.Category.Name.Equals("Fast Attack")).OrderBy(i => i.Id);
                                 }
                             }
-
                         }
                     }
                 }*/
